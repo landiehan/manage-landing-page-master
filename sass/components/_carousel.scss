@@ -1,0 +1,52 @@
+.carousel {
+  position: relative;
+
+  &__indicators {
+    @media screen and (min-width: $bp-desktop) {
+      display: none;  
+    }
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 5rem;
+    list-style-type: none;
+    > li {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      border: 2px solid $bright-red;
+    }
+
+    > li + li {
+      margin-left: .5rem;
+    }
+
+    > li.active {
+      background-color: $bright-red;
+    }
+  }
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  @media screen and (min-width: $bp-desktop) {
+    position: static;
+    opacity: 1;  
+  }
+}
+
+.current {
+  opacity: 1;
+  transition: transform 1s ease-in-out;
+}
+
+.next {
+  transform: translateX(100%);
+}
+
+.prev {
+  opacity: 1;
+  transform: translateX(-100%);
+  transition: transform 1s ease-in-out;
+}
