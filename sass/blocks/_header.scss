@@ -1,0 +1,118 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  &__logo {
+    display: inline-block;
+    height: 1.6rem;
+    @media screen and (min-width: $bp-desktop) {
+      height: 2.4rem;  
+    }    
+    img { 
+      height: 100%;
+      display: block; 
+    }
+  }
+
+  &__menu-toggle {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url("../images/icon-hamburger.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    @media screen and (min-width: $bp-desktop) {
+      display: none;  
+    }  
+  }
+
+  &__menu-mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(black, .05);
+    z-index: -1;
+  }
+
+  &__nav {
+    display: none;
+    @media screen and (min-width: $bp-desktop) {
+      display: block;  
+    }
+  }
+
+  &__menu-list {
+    text-align: center;
+    font-weight: 700;
+    > li {
+      margin: 2.5rem 0; 
+      a:hover {
+        color: $dark-grayish-blue;
+      }
+    }
+    
+    @media screen and (min-width: $bp-desktop) {
+      display: flex; 
+      font-size: 1.4rem;
+      > li {
+        margin: 0 2rem; 
+        a:hover {
+          color: $dark-grayish-blue;
+        }
+      } 
+    }   
+  }
+
+  &__btn {
+    display: none;
+    @media screen and (min-width: $bp-desktop) {
+      display: inline-block;  
+    } 
+  }
+}
+
+#menu-toggle:checked ~ .header__menu-toggle {
+  background-image: url("../images/icon-close.svg");
+}
+
+#menu-toggle:checked ~ .header__menu-mobile-overlay {
+  display: block;
+}
+
+#menu-toggle:checked ~ .header__nav {
+  display: block;
+  position: absolute;
+  top: 112px;
+  left: 2rem;
+  right: 2rem;
+  background-color: white;
+  border-radius: .5rem;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: 1rem;
+  }
+  animation: scaleIn 250ms ease;
+} @keyframes scaleIn {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.screenreader-only {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  @media screen and (min-width: $bp-desktop) {
+    display: none;  
+  }
+}
