@@ -1,0 +1,47 @@
+.intro {
+  @media screen and (min-width: $bp-desktop) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;   
+  }
+
+  &__hero {
+    width: 100%;
+    @media screen and (min-width: $bp-desktop) {
+      width: unset; 
+    }
+  }
+
+  &__content {
+    margin: 0 auto;
+    text-align: center;
+    @media screen and (min-width: $bp-desktop) {
+      width: 43%;
+      margin: 0;
+      text-align: start;  
+    }
+  }
+
+  &__heading {
+    font-size: 40px;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    @media screen and (min-width: $bp-desktop) {
+      font-size: 56px;
+      letter-spacing: -0.03em;
+    }
+  }
+   
+  &__tagline {
+    color: $dark-grayish-blue;
+    line-height: 1.7;
+    font-size: 16px;
+    max-width: 90%;
+    margin: 1rem auto 3rem;
+    @media screen and (min-width: $bp-desktop) {
+      margin: 2.5rem 0 4rem;
+      max-width: 70%; 
+    }
+  }
+}
