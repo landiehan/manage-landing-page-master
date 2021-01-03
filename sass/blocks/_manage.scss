@@ -1,0 +1,63 @@
+.manage {
+  width: 375px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  background-image: url("../images/bg-tablet-pattern.svg"), url("../images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: 120%, 80%;
+  background-position: top -90px right -110px, top 520px right -170px;
+  
+  @media screen and (min-width: $bp-desktop) {
+    width: 1440px; 
+    background-size: unset;
+    background-position: top -140px right -150px, top 1150px left -480px; 
+    box-shadow: 0 0 4rem rgba($bright-red, .1);
+  }
+  
+  &__header {
+    padding: 4rem 2rem;
+    @media screen and (min-width: $bp-desktop) {
+      padding: 7rem 16rem;  
+    }
+  }
+
+  &__intro {
+    padding: 0 2rem;
+    @media screen and (min-width: $bp-desktop) {
+      margin-top: 3rem;
+      padding: 0 16rem;  
+    }
+  }
+
+  &__features {
+    margin-top: 8rem;
+    @media screen and (min-width: $bp-desktop) {
+      margin-top: 10rem;
+      padding: 0 16rem;  
+    }
+  }
+
+  &__testimonials {
+    margin-top: 6rem;
+    @media screen and (min-width: $bp-desktop) {
+      margin-top: 16rem;  
+    }
+  }
+
+  &__simplify {
+    margin-top: 4rem;
+    height: 400px;
+    @media screen and (min-width: $bp-desktop) {
+      margin-top: 16rem;
+      height: 230px;  
+    }
+  }
+
+  &__footer {
+    padding: 5rem 2rem 3rem;
+    @media screen and (min-width: $bp-desktop) {
+      padding: 7rem 16rem;  
+    }
+  }
+}
