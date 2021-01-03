@@ -1,0 +1,35 @@
+.simplify {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $bright-red;
+  background-image: url("../images/bg-simplify-section-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+
+  @media screen and (min-width: $bp-desktop) {
+    flex-direction: row;
+    padding: 0 12%;
+    justify-content: space-between;
+    background-image: url("../images/bg-simplify-section-desktop.svg");
+    background-position: bottom 0 right -250px;
+  }
+
+  &__heading {
+    font-size: 4rem;
+    color: $very-light-gray;
+    max-width: 85%;
+    text-align: center;
+
+    @media screen and (min-width: $bp-desktop) {
+      max-width: 50%;
+      text-align: start;
+      line-height: 1.1;
+    }
+  }
+
+  &__btn {
+    margin-top: 2rem;
+  }
+}
